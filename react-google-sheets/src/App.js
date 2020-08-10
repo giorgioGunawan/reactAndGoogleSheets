@@ -1,15 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { forwardRef } from 'react';
 import './App.css';
 import Tabletop from 'tabletop';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import MaterialTable from 'material-table';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -73,45 +65,40 @@ class App extends React.Component {
   render() {
     const { data } = this.state;
       
-    var someData = [];
-
+    var someData = []
+      
     
     return (
-    
-      <div className="App">   
-        
-         <div >
+      <div>   
+         <div>
           {
             data.map(obj => {
               return (
-                  someData.push ({
+                  someData.push({
                     nama: obj.Sales,
                     kode: obj.Dokter,
                     tanggal: obj.Tanggal,
                     waktu: obj.Waktu,
-                    status: obj.Status
+                    status: obj.Status,
                   })      
-             )
-             
+              )  
             })
           }
           
           <MaterialTable
             icons={tableIcons}
-                         columns={[
-                            { title: 'Nama Sales', field: 'nama' },
-                            { title: 'Kode Dokter', field: 'kode' },
-                            { title: 'Waktu', field: 'waktu'},
-                            { title: 'Tanggal', field: 'tanggal'},
-                            { title: 'Status', field: 'status'},
-                          ]}
-                          data = {someData}
-                          title =  "Monitoring"
-                          
+             columns={[
+                { title: 'Nama Sales', field: 'nama' },
+                { title: 'Kode Dokter', field: 'kode' },
+                { title: 'Waktu', field: 'waktu'},
+                { title: 'Tanggal', field: 'tanggal'},
+                { title: 'Status', field: 'status'},
+              ]}
+              data = {someData}
+              title =  "Monitoring"          
 
-        /> 
+          /> 
         </div>
-
       </div>
 
     );
