@@ -1,12 +1,55 @@
 import React, { Component } from 'react';
-
+import { forwardRef } from 'react';
 import './App.css';
 import Tabletop from 'tabletop';
-import Table from 'react-bootstrap/Table'
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import MaterialTable from 'material-table';
+import AddBox from '@material-ui/icons/AddBox';
+import ArrowDownward from '@material-ui/icons/ArrowDownward';
+import Check from '@material-ui/icons/Check';
+import ChevronLeft from '@material-ui/icons/ChevronLeft';
+import ChevronRight from '@material-ui/icons/ChevronRight';
+import Clear from '@material-ui/icons/Clear';
+import DeleteOutline from '@material-ui/icons/DeleteOutline';
+import Edit from '@material-ui/icons/Edit';
+import FilterList from '@material-ui/icons/FilterList';
+import FirstPage from '@material-ui/icons/FirstPage';
+import LastPage from '@material-ui/icons/LastPage';
+import Remove from '@material-ui/icons/Remove';
+import SaveAlt from '@material-ui/icons/SaveAlt';
+import Search from '@material-ui/icons/Search';
+import ViewColumn from '@material-ui/icons/ViewColumn';
 
-
+const tableIcons = {
+    Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
+    Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
+    Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+    Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
+    DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+    Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
+    Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
+    Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
+    FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
+    LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
+    NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+    PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
+    ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+    Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
+    SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
+    ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
+    ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
+  };
 
 class App extends React.Component {
+    
+    
   constructor() {
     super()
     this.state = {
@@ -15,6 +58,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    
     Tabletop.init({
       key: '1mHgz4qu3O4twjA_xwnsIvuk3td5XKi75M-xPgjWglFk',
       callback: googleData => {
@@ -27,49 +71,45 @@ class App extends React.Component {
   }
 
   render() {
-    const { data } = this.state
+    const { data } = this.state;
+      
+    var someData = [];
+
+    
     return (
     
-      <div className="App">
+      <div className="App">   
         
-    
-        
-        <Table striped bordered hover responsive>
-                        <thead>
-                          <tr>
-                              <th>Nama Sales</th>
-                              <th>Kode Dokter</th>
-                              <th>Waktu</th>
-                              <th>Tanggal</th>
-                              <th>Status</th>
-                          </tr>
-                        </thead>
-        </Table>
-         <div id="book-details">
+         <div >
           {
             data.map(obj => {
               return (
-                     
-        
-        
-        
-                      <Table striped bordered hover responsive>
-
-                        <tbody>
-                          <tr>
-                            <td>{obj.Sales}</td>
-                            <td>{obj.Dokter}</td>
-                            <td>{obj.Waktu}</td>
-                            <td>{obj.Tanggal}</td>
-                            <td>{obj.Status}</td>
-                          </tr>
-                          
-                        </tbody>
-                      </Table>
+                  someData.push ({
+                    nama: obj.Sales,
+                    kode: obj.Dokter,
+                    tanggal: obj.Tanggal,
+                    waktu: obj.Waktu,
+                    status: obj.Status
+                  })      
              )
+             
             })
           }
-        <script type="text/javascript" src="js/materialize.min.js"></script>
+          
+          <MaterialTable
+            icons={tableIcons}
+                         columns={[
+                            { title: 'Nama Sales', field: 'nama' },
+                            { title: 'Kode Dokter', field: 'kode' },
+                            { title: 'Waktu', field: 'waktu'},
+                            { title: 'Tanggal', field: 'tanggal'},
+                            { title: 'Status', field: 'status'},
+                          ]}
+                          data = {someData}
+                          title =  "Monitoring"
+                          
+
+        /> 
         </div>
 
       </div>
