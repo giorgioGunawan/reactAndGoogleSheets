@@ -73,7 +73,7 @@ class App extends React.Component {
          <div>
           {
             data.map(obj => {
-              return (
+              
                   someData.push({
                     nama: obj.Sales,
                     kode: obj.Dokter,
@@ -81,7 +81,7 @@ class App extends React.Component {
                     waktu: obj.Waktu,
                     status: obj.Status,
                   })      
-              )  
+              
             })
           }
           
