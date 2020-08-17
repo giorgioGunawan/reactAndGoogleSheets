@@ -44,7 +44,7 @@ const tableIcons = {
 class App extends React.Component {
     
   handleClick = () => {
-    window.open("https://script.google.com/macros/s/AKfycbyqU3Iq606GnMnNHbypicgPFh2NIuoJR6MC_PDMpAHJLzX3aMti/exec");
+    window.open("https://script.google.com/macros/s/1EDiit5C2L-RFA8BmIfJ_uLp8iLylTO6Hi3wH33QMq_g/exec");
   }
     
   constructor() {
