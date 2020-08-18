@@ -87,6 +87,7 @@ class App extends React.Component {
                     tanggal: obj.Tanggal,
                     waktu: obj.Waktu,
                     status: obj.Status,
+                    code: obj.Code
                   })      
               
             })
@@ -95,6 +96,7 @@ class App extends React.Component {
           <MaterialTable
             icons={tableIcons}
              columns={[
+                { title: 'Kode Jadwal', field: 'code' },
                 { title: 'Nama Sales', field: 'nama' },
                 { title: 'Kode Dokter', field: 'kode' },
                 { title: 'Waktu', field: 'waktu'},
