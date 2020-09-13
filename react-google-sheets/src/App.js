@@ -76,8 +76,7 @@ class App extends React.Component {
     
     return (
       <div>   
-                
-         <div>
+        <div>
           {
             data.map(obj => {
               
@@ -92,10 +91,10 @@ class App extends React.Component {
               
             })
           }
-          
+        
           <MaterialTable
             icons={tableIcons}
-             columns={[
+              columns={[
                 { title: 'Kode Jadwal', field: 'code' },
                 { title: 'Nama Sales', field: 'nama' },
                 { title: 'Kode Dokter', field: 'kode' },
