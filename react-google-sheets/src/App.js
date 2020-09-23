@@ -87,8 +87,8 @@ class App extends React.Component {
                     waktu: obj.Waktu,
                     status: obj.Status,
                     code: obj.Code,
-                    checkpointCode = obj.CheckpointCode,
-                    waktuCheckpoint = obj.WaktuCheckpoint
+                    checkpointCode: obj.CheckpointCode,
+                    waktuCheckpoint: obj.WaktuCheckpoint
                   })      
               
             })
