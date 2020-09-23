@@ -88,7 +88,8 @@ class App extends React.Component {
                     status: obj.Status,
                     code: obj.Code,
                     checkpointCode: obj.CheckpointCode,
-                    waktuCheckpoint: obj.WaktuCheckpoint
+                    waktuCheckpoint: obj.WaktuCheckpoint,
+                    keterangan: obj.Keterangan,
                   })      
               
             })
@@ -105,6 +106,7 @@ class App extends React.Component {
                 { title: 'Tanggal', field: 'tanggal'},
                 { title: 'Status', field: 'status'},
                 { title: 'Kode Checkpoint', field: 'checkpointCode'},
+                { title: 'Keterangan', field: 'keterangan'},
               ]}
               data = {someData}
               title =  "Monitoring"          
