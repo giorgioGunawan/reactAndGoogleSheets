@@ -79,19 +79,19 @@ class App extends React.Component {
         <div>
           {
             data.map(obj => {
-              
-                  someData.push({
-                    nama: obj.Sales,
-                    kode: obj.Dokter,
-                    tanggal: obj.Tanggal,
-                    waktu: obj.Waktu,
-                    status: obj.Status,
-                    code: obj.Code,
-                    checkpointCode: obj.CheckpointCode,
-                    waktuCheckpoint: obj.WaktuCheckpoint,
-                    keterangan: obj.Keterangan,
-                  })      
-              
+              if (obj.Sales !== "" && obj.Code !== "") {
+                someData.push({
+                  nama: obj.Sales,
+                  kode: obj.Dokter,
+                  tanggal: obj.Tanggal,
+                  waktu: obj.Waktu,
+                  status: obj.Status,
+                  code: obj.Code,
+                  checkpointCode: obj.CheckpointCode,
+                  waktuCheckpoint: obj.WaktuCheckpoint,
+                  keterangan: obj.Keterangan,
+                })      
+              }
             })
           }
         
