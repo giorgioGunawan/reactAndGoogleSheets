@@ -79,7 +79,7 @@ class App extends React.Component {
         <div>
           {
             data.map(obj => {
-              if (obj.Sales !== "" && obj.Code !== "") {
+              if (obj.Sales !== "" && obj.Tanggal !== "" && obj.Dokter !== "") {
                 someData.push({
                   nama: obj.Sales,
                   kode: obj.Dokter,
@@ -90,6 +90,7 @@ class App extends React.Component {
                   checkpointCode: obj.CheckpointCode,
                   waktuCheckpoint: obj.WaktuCheckpoint,
                   keterangan: obj.Keterangan,
+                  reschedDetail: obj.ReschedDetail,
                 })      
               }
             })
@@ -101,12 +102,13 @@ class App extends React.Component {
                 { title: 'Kode Jadwal', field: 'code' },
                 { title: 'Nama Sales', field: 'nama' },
                 { title: 'Kode Dokter', field: 'kode' },
-                { title: 'Waktu', field: 'waktu'},
+                { title: 'Waktu Jadwal', field: 'waktu'},
                 { title: 'Waktu Checkpoint', field: 'waktuCheckpoint'},
                 { title: 'Tanggal', field: 'tanggal'},
                 { title: 'Status', field: 'status'},
                 { title: 'Kode Checkpoint', field: 'checkpointCode'},
-                { title: 'Keterangan', field: 'keterangan'},
+                { title: 'Keterangan Checkpoint', field: 'keterangan'},
+                { title: 'Alasan Pergantian Jadwal', field: 'reschedDetail'},
               ]}
               data = {someData}
               title =  "Monitoring"          
