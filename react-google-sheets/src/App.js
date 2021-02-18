@@ -103,7 +103,7 @@ class App extends React.Component {
                 {
                   icon: LinkIcon,
                   tooltip: 'Go to post',
-                  onClick: (event, rowData) => {location.href = rowData.link}
+                  onClick: (event, rowData) => {window.location.href = rowData.link}
                 }
               ]}
               data = {someData}
