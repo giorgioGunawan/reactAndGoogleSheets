@@ -97,7 +97,7 @@ class App extends React.Component {
               columns={[
                 { title: 'Job Title', field: 'title', filtering: false },
                 { title: 'Company', field: 'company' },
-                { title: 'Source', field: 'source'},
+                { title: 'Source', field: 'source', lookup: { 'Indeed': 'Indeed', 'Seek': 'Seek' },},
               ]}
               
               data = {someData}
@@ -124,4 +124,3 @@ class App extends React.Component {
 }
 
 export default App;
-
