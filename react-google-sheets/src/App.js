@@ -95,9 +95,9 @@ class App extends React.Component {
           <MaterialTable
             icons={tableIcons}
               columns={[
-                { title: 'Job Title', field: 'title' },
+                { title: 'Job Title', field: 'title', filtering: false },
                 { title: 'Company', field: 'company' },
-                { title: 'Source', field: 'source' },
+                { title: 'Source', field: 'source'},
               ]}
               
               data = {someData}
@@ -124,3 +124,4 @@ class App extends React.Component {
 }
 
 export default App;
+
