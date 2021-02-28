@@ -44,7 +44,7 @@ const tableIcons = {
 class App extends React.Component {
     
   handleClick = () => {
-    window.open("https://script.google.com/macros/s/1EDiit5C2L-RFA8BmIfJ_uLp8iLylTO6Hi3wH33QMq_g/exec");
+    window.open("https://script.google.com/macros/s/1ScJ2LJ6wkg09vDs7nKT-UfeI2-UcphQ7cSBDTi4Qq8I/exec");
   }
     
   constructor() {
@@ -57,7 +57,7 @@ class App extends React.Component {
   componentDidMount() {
     
     Tabletop.init({
-      key: '1EDiit5C2L-RFA8BmIfJ_uLp8iLylTO6Hi3wH33QMq_g',
+      key: '1ScJ2LJ6wkg09vDs7nKT-UfeI2-UcphQ7cSBDTi4Qq8I',
       callback: googleData => {
         this.setState({
           data: googleData
@@ -79,18 +79,10 @@ class App extends React.Component {
         <div>
           {
             data.map(obj => {
-              if (obj.Sales !== "" && obj.Tanggal !== "" && obj.Dokter !== "") {
+              if (obj.JobTitle != '') {
                 someData.push({
-                  nama: obj.Sales,
-                  kode: obj.Dokter,
-                  tanggal: obj.Tanggal,
-                  waktu: obj.Waktu,
-                  status: obj.Status,
-                  code: obj.Code,
-                  checkpointCode: obj.CheckpointCode,
-                  waktuCheckpoint: obj.WaktuCheckpoint,
-                  keterangan: obj.Keterangan,
-                  reschedDetail: obj.ReschedDetail,
+                  title: obj.JobTitle,
+                  company: obj.Company,
                 })      
               }
             })
@@ -99,16 +91,8 @@ class App extends React.Component {
           <MaterialTable
             icons={tableIcons}
               columns={[
-                { title: 'Kode Jadwal', field: 'code' },
-                { title: 'Nama Sales', field: 'nama' },
-                { title: 'Kode Dokter', field: 'kode' },
-                { title: 'Waktu Jadwal', field: 'waktu'},
-                { title: 'Waktu Checkpoint', field: 'waktuCheckpoint'},
-                { title: 'Tanggal', field: 'tanggal'},
-                { title: 'Status', field: 'status'},
-                { title: 'Kode Checkpoint', field: 'checkpointCode'},
-                { title: 'Keterangan Checkpoint', field: 'keterangan'},
-                { title: 'Alasan Pergantian Jadwal', field: 'reschedDetail'},
+                { title: 'Job Title', field: 'title' },
+                { title: 'Company Name', field: 'company' },
               ]}
               data = {someData}
               title =  "Jobs Search Table"          
