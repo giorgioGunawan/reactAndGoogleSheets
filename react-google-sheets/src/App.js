@@ -79,10 +79,9 @@ class App extends React.Component {
         <div>
           {
             data.map(obj => {
-              if (obj.JobTitle !== "") {
+              if (obj.Sales !== "") {
                 someData.push({
-                  title: obj.JobTitle,
-                  company: obj.Company,
+                  nama: obj.Sales
                 })      
               }
             })
@@ -91,8 +90,7 @@ class App extends React.Component {
           <MaterialTable
             icons={tableIcons}
               columns={[
-                { title: 'Job Title', field: 'title' },
-                { title: 'Company Name', field: 'company' },
+                { title: 'Nama Sales', field: 'nama' }
               ]}
               data = {someData}
               title =  "Jobs Search Table"          
