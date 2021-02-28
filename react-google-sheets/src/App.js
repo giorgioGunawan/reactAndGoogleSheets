@@ -99,15 +99,21 @@ class App extends React.Component {
                 { title: 'Company', field: 'company' },
                 { title: 'Source', field: 'source' },
               ]}
+              
+              data = {someData}
+              title =  "Showing jobs scraped from github.com/giorgioGunawan/sydneyJobsScraping"  
+              
               actions={[
                 {
                   icon: LinkIcon,
-                  tooltip: 'Go to post',
+                  tooltip: 'Go to job post',
                   onClick: (event, rowData) => {window.location.href = rowData.link}
                 }
               ]}
-              data = {someData}
-              title =  "Showing jobs scraped from github.com/giorgioGunawan/sydneyJobsScraping"      
+
+              options={{
+                filtering: true
+              }}
 
           /> 
         </div>
