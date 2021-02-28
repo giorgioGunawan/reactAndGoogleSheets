@@ -46,11 +46,6 @@ class App extends React.Component {
   handleClick = () => {
     window.open("https://script.google.com/macros/s/1ScJ2LJ6wkg09vDs7nKT-UfeI2-UcphQ7cSBDTi4Qq8I/exec");
   }
-
-  handleLink = (event, rowData) =>{
-    alert("You clicked " + rowData.link)
-    window.location.assign(rowData.link)
-  }
     
   constructor() {
     super()
@@ -107,9 +102,7 @@ class App extends React.Component {
                 {
                   icon: 'link',
                   tooltip: 'Go to post',
-                  onClick: (event, rowData) => {
-                    handleLink(event, rowData)
-                  }
+                  onClick: (event, rowData) => {window.location.assign(rowData.link)}
                 }
               ]}
               data = {someData}
