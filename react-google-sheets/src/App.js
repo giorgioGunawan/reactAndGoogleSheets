@@ -79,7 +79,7 @@ class App extends React.Component {
         <div>
           {
             data.map(obj => {
-              if (obj.JobTitle != '') {
+              if (obj.JobTitle !== "") {
                 someData.push({
                   title: obj.JobTitle,
                   company: obj.Company,
