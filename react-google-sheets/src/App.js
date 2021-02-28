@@ -46,6 +46,11 @@ class App extends React.Component {
   handleClick = () => {
     window.open("https://script.google.com/macros/s/1ScJ2LJ6wkg09vDs7nKT-UfeI2-UcphQ7cSBDTi4Qq8I/exec");
   }
+
+  handleLink = (event, rowData) =>{
+    alert("You clicked " + rowData.link)
+    window.location.assign(rowData.link)
+  }
     
   constructor() {
     super()
@@ -84,8 +89,8 @@ class App extends React.Component {
                   title: obj.Title,
                   company: obj.Company,
                   keyword: obj.Keyword,
-                  source: obj.Source
-
+                  source: obj.Source,
+                  link: obj.Link
                 })      
               }
             })
@@ -96,7 +101,16 @@ class App extends React.Component {
               columns={[
                 { title: 'Job Title', field: 'title' },
                 { title: 'Company', field: 'company' },
-                { title: 'Source', field: 'source' }
+                { title: 'Source', field: 'source' },
+              ]}
+              actions={[
+                {
+                  icon: 'link',
+                  tooltip: 'Go to post',
+                  onClick: (event, rowData) => {
+                    handleLink(event, rowData)
+                  }
+                }
               ]}
               data = {someData}
               title =  "Showing jobs scraped from github.com/giorgioGunawan/sydneyJobsScraping"      
