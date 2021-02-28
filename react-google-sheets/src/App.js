@@ -91,16 +91,15 @@ class App extends React.Component {
             })
           }
         
-          <MaterialTable
+          <MaterialTable title={data}
             icons={tableIcons}
               columns={[
                 { title: 'Job Title', field: 'title' },
                 { title: 'Company', field: 'company' },
-                { title: 'Keyword', field: 'keyword' },
                 { title: 'Source', field: 'source' }
               ]}
               data = {someData}
-              title =  {someData['source'] }        
+              //title =  {someData['source'] }        
 
           /> 
         </div>
