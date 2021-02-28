@@ -101,9 +101,9 @@ class App extends React.Component {
               ]}
               actions={[
                 {
-                  icon: 'LinkIcon',
+                  icon: LinkIcon,
                   tooltip: 'Go to post',
-                  onClick: (event, rowData) => {window.location.replace(rowData.link)}
+                  onClick: (event, rowData) => {window.location.href = rowData.link}
                 }
               ]}
               data = {someData}
