@@ -111,7 +111,7 @@ class App extends React.Component {
                 { title: 'Alasan Pergantian Jadwal', field: 'reschedDetail'},
               ]}
               data = {someData}
-              title =  "Jobs Table"          
+              title =  "Jobs Search Table"          
 
           /> 
         </div>
