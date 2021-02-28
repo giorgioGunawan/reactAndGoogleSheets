@@ -44,7 +44,7 @@ const tableIcons = {
 class App extends React.Component {
     
   handleClick = () => {
-    window.open("https://script.google.com/macros/s/1EDiit5C2L-RFA8BmIfJ_uLp8iLylTO6Hi3wH33QMq_g/exec");
+    window.open("https://script.google.com/macros/s/1ScJ2LJ6wkg09vDs7nKT-UfeI2-UcphQ7cSBDTi4Qq8I/exec");
   }
     
   constructor() {
@@ -57,7 +57,7 @@ class App extends React.Component {
   componentDidMount() {
     
     Tabletop.init({
-      key: '1EDiit5C2L-RFA8BmIfJ_uLp8iLylTO6Hi3wH33QMq_g',
+      key: 'https://docs.google.com/spreadsheets/d/1ScJ2LJ6wkg09vDs7nKT-UfeI2-UcphQ7cSBDTi4Qq8I/edit#gid=1849163784',
       callback: googleData => {
         this.setState({
           data: googleData
@@ -79,9 +79,9 @@ class App extends React.Component {
         <div>
           {
             data.map(obj => {
-              if (obj.Sales !== "") {
+              if (obj.JobTitle !== "") {
                 someData.push({
-                  nama: obj.Sales
+                  nama: obj.JobTitle
                 })      
               }
             })
@@ -90,7 +90,7 @@ class App extends React.Component {
           <MaterialTable
             icons={tableIcons}
               columns={[
-                { title: 'Nama Sales', field: 'nama' }
+                { title: 'Job Title', field: 'nama' }
               ]}
               data = {someData}
               title =  "Jobs Search Table"          
