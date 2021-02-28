@@ -99,7 +99,7 @@ class App extends React.Component {
                 { title: 'Source', field: 'source' }
               ]}
               data = {someData}
-              title =  "Showing Jobs Scraped"      
+              title =  "Showing jobs scraped from github.com/giorgioGunawan/sydneyJobsScraping"      
 
           /> 
         </div>
