@@ -8,6 +8,7 @@ import MaterialTable from 'material-table';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Check from '@material-ui/icons/Check';
+import LinkIcon from '@material-ui/icons/Link';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import Clear from '@material-ui/icons/Clear';
@@ -100,9 +101,9 @@ class App extends React.Component {
               ]}
               actions={[
                 {
-                  icon: 'link',
+                  icon: 'LinkIcon',
                   tooltip: 'Go to post',
-                  onClick: (event, rowData) => {window.location.assign(rowData.link)}
+                  onClick: (event, rowData) => {window.location.replace(rowData.link)}
                 }
               ]}
               data = {someData}
