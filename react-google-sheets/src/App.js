@@ -91,7 +91,7 @@ class App extends React.Component {
             })
           }
         
-          <MaterialTable title={data}
+          <MaterialTable
             icons={tableIcons}
               columns={[
                 { title: 'Job Title', field: 'title' },
@@ -99,7 +99,7 @@ class App extends React.Component {
                 { title: 'Source', field: 'source' }
               ]}
               data = {someData}
-              //title =  {someData['source'] }        
+              title =  "Showing Jobs Scraped"      
 
           /> 
         </div>
