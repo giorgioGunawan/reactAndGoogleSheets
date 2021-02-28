@@ -44,7 +44,7 @@ const tableIcons = {
 class App extends React.Component {
     
   handleClick = () => {
-    window.open("https://script.google.com/macros/s/1ScJ2LJ6wkg09vDs7nKT-UfeI2-UcphQ7cSBDTi4Qq8I/exec");
+    window.open("https://script.google.com/macros/s/1EDiit5C2L-RFA8BmIfJ_uLp8iLylTO6Hi3wH33QMq_g/exec");
   }
     
   constructor() {
@@ -57,7 +57,7 @@ class App extends React.Component {
   componentDidMount() {
     
     Tabletop.init({
-      key: '1ScJ2LJ6wkg09vDs7nKT-UfeI2-UcphQ7cSBDTi4Qq8I',
+      key: '1EDiit5C2L-RFA8BmIfJ_uLp8iLylTO6Hi3wH33QMq_g',
       callback: googleData => {
         this.setState({
           data: googleData
