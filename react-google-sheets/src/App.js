@@ -21,6 +21,9 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -54,6 +57,7 @@ class App extends React.Component {
       data: []
     }
   }
+  
 
   componentDidMount() {
     
@@ -73,10 +77,48 @@ class App extends React.Component {
     
     
     var someData = []
-      
+
+    const useStyles = makeStyles((theme) => ({
+      root: {
+        flexGrow: 1,
+      },
+      paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+      },
+    }));
+    
+    const classes = useStyles();
     
     return (
-      <div>   
+      
+      <div>
+        <div className={classes.root}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>xs=12</Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper className={classes.paper}>xs=6</Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper className={classes.paper}>xs=6</Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>xs=3</Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>xs=3</Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>xs=3</Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>xs=3</Paper>
+            </Grid>
+          </Grid>
+        </div>
         <div>
           {
             data.map(obj => {
